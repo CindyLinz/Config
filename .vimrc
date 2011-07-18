@@ -1,3 +1,6 @@
+" Author : Cindylinz
+" Date   : 2011.7.18
+
 set ts=8
 set sw=4
 set backspace=indent,eol,start
@@ -48,6 +51,3 @@ if version >= 700
 
   "au BufNewFile,BufRead *.txt,*.tex set spell
 end
-
-" Author : Cindylinz
-" Date   : 2011.7.18

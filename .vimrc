@@ -45,8 +45,8 @@ if version >= 700
   imap <C-o> :tabn<CR>
   imap <C-p> :tabp<CR>
 
-  highlight TabLineSel term=bold,underline cterm=bold,underline ctermfg=7 ctermbg=0
-  highlight TabLine    term=bold cterm=bold
+  highlight TabLineSel term=bold cterm=bold ctermfg=5 ctermbg=0
+  highlight TabLine    term=bold cterm=bold ctermfg=0 ctermbg=0
   highlight clear TabLineFill
 
   "au BufNewFile,BufRead *.txt,*.tex set spell

@@ -1,0 +1,5 @@
+hardstatus alwayslastline "%{= bc} %-Lw%{= .w}%n%f%t%{= .c}%+Lw%=%Y.%m.%d %c | %H"
+cjkwidth on
+encoding utf8 utf8
+vbell off
+shelltitle ''

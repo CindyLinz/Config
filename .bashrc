@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW.UTF-8
+export LANGUAGE=zh_TW:zh
+
 export PATH=~/.cabal/bin:$PATH
 
 # don't put duplicate lines in the history. See bash(1) for more options

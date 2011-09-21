@@ -12,6 +12,7 @@ set foldmethod=indent
 set bg=dark
 set ruler
 set wildmenu
+set modeline
 syn on
 
 hi MatchParen ctermbg=4

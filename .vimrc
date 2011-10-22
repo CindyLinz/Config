@@ -13,6 +13,7 @@ set bg=dark
 set ruler
 set wildmenu
 set modeline
+set et
 syn on
 
 hi MatchParen ctermbg=4

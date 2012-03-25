@@ -5,8 +5,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export LANG=zh_TW.UTF-8
-export LANGUAGE=zh_TW:zh
+export LC_ALL=en_US.UTF-8
 
 export PATH=~/.cabal/bin:$PATH
 

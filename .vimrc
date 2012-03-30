@@ -19,6 +19,8 @@ syn on
 hi MatchParen ctermbg=4
 
 au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.js,*.h,*.hpp,*.cc set cin
+au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.js,*.h,*.hpp,*.cc set sw=4
+au BufNewFile,BufRead *.hs set sw=2
 
 if version >= 700
   map g1 :tabn 1<CR>

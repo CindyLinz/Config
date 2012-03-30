@@ -42,8 +42,6 @@ if version >= 700
   map gm8 :tabm 7<CR>
   map gm9 :tabm<CR>
   map gc :tabnew<CR>
-  map gn :tabn<CR>
-  map gp :tabp<CR>
   map <C-o> :tabn<CR>
   map <C-p> :tabp<CR>
   imap <C-o> :tabn<CR>

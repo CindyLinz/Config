@@ -21,7 +21,7 @@ hi MatchParen ctermbg=4
 hi Normal ctermbg=0
 
 au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.h,*.hpp,*.cc set cin sw=4
-au BufNewFile,BufRead *.js set nocin ai sw=4
+au BufNewFile,BufRead *.js,*.coffee set nocin ai sw=4
 au BufNewFile,BufRead *.hs set sw=2
 
 if version >= 700

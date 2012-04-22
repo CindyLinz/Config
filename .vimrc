@@ -14,6 +14,7 @@ set ruler
 set wildmenu
 set modeline
 set et
+filetype plugin on
 syn on
 
 hi MatchParen ctermbg=4

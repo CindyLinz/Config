@@ -17,9 +17,10 @@ set et
 syn on
 
 hi MatchParen ctermbg=4
+hi Normal ctermbg=0
 
-au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.js,*.h,*.hpp,*.cc set cin
-au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.js,*.h,*.hpp,*.cc set sw=4
+au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.h,*.hpp,*.cc set cin sw=4
+au BufNewFile,BufRead *.js set nocin ai sw=4
 au BufNewFile,BufRead *.hs set sw=2
 
 if version >= 700
@@ -53,3 +54,21 @@ if version >= 700
 
   "au BufNewFile,BufRead *.txt,*.tex set spell
 end
+
+set wildmenu
+set wildmode=longest,list
+
+    "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    "autocmd vimenter * if !argc() | NERDTree | endif
+map gn :NERDTreeToggle \| :silent NERDTreeMirror<CR>
+
+"colorscheme default
+let g:indent_guides_auto_colors = 0 
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=1 
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4 
+"let g:indent_guides_auto_colors = 0
+"hi IndentGuidesOdd  guibg=red   ctermbg=3
+"hi IndentGuidesEven guibg=green ctermbg=4
+"snipmate (good!)
+"large file plugin https://github.com/gmunkhbaatarmn/vim-largefile http://www.vim.org/scripts/script.php?script_id=1506

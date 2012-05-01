@@ -9,6 +9,7 @@ set fileencodings=utf8,big5,big5-hkscs
 set ai
 set nocin
 set foldmethod=indent
+set nofen
 set bg=dark
 set ruler
 set wildmenu

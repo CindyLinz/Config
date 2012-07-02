@@ -63,6 +63,7 @@ set wildmode=longest,list
     "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     "autocmd vimenter * if !argc() | NERDTree | endif
 map gn :NERDTreeToggle \| :silent NERDTreeMirror<CR>
+map <leader>n :NERDTreeFind<CR>
 
 "colorscheme default
 let g:indent_guides_auto_colors = 0 

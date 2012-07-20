@@ -6,6 +6,7 @@
 [ -z "$PS1" ] && return
 
 export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US:en
 
 export PATH=~/bin:~/.cabal/bin:$PATH
 

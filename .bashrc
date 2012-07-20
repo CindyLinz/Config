@@ -7,7 +7,7 @@
 
 export LC_ALL=en_US.UTF-8
 
-export PATH=~/.cabal/bin:$PATH
+export PATH=~/bin:~/.cabal/bin:$PATH
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace

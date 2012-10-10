@@ -87,11 +87,15 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 if [ -x /usr/bin/most ]; then
-    export PAGER=most
+    export PAGER=/usr/bin/most
 fi
 
 if [ -x /usr/bin/vim ]; then
-    export EDITOR=vim
+    export EDITOR=/usr/bin/vim
+fi
+
+if [ -x /usr/bin/chromium ]; then
+    export BROWSER=/usr/bin/chromium
 fi
 
 # Add an "alert" alias for long running commands.  Use like so:

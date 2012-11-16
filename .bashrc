@@ -80,6 +80,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias chromium='chromium --enable-user-scripts --enable-plugins --enable-extensions --enable-easy-off-store-extension-install'
 fi
 
 alias rm='rm -i'

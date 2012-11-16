@@ -11,6 +11,7 @@ main = xmonad $ defaultConfig
   , keys = newKeys
   , handleEventHook = fullscreenEventHook
   , layoutHook = layout
+  , startupHook = spawn "terminator"
   }
 
 newKeys conf@(XConfig {XMonad.modMask = modMask}) =

@@ -25,7 +25,8 @@ hi Normal ctermbg=0
 au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.h,*.hpp,*.cc set cin sw=4
 au BufNewFile,BufRead *.js,*.coffee set nocin ai sw=4
 au BufNewFile,BufRead *.hs set sw=2
-au BufNewFile,BufRead *.coffee setf coffee
+au BufNewFile,BufRead *.coffee set filetype=coffee
+au BufNewFile,BufRead *.md set filetype=markdown
 
 if version >= 700
   map g1 :tabn 1<CR>

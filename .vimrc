@@ -27,6 +27,8 @@ au BufNewFile,BufRead *.js,*.coffee set nocin ai sw=4
 au BufNewFile,BufRead *.hs set sw=2
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.ls set filetype=ls
+au FileType perl set isident-=$
 
 if version >= 700
   map g1 :tabn 1<CR>

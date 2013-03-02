@@ -1,5 +1,5 @@
 " Author : Cindylinz
-" Date   : 2011.7.18
+" Date   : 2013.3.3
 
 set ts=8
 set sw=4
@@ -22,13 +22,13 @@ syn on
 hi MatchParen ctermbg=4
 hi Normal ctermbg=0
 
-au BufNewFile,BufRead *.c,*.cpp,*.java,*.pl,*.h,*.hpp,*.cc set cin sw=4
-au BufNewFile,BufRead *.js,*.coffee set nocin ai sw=4
-au BufNewFile,BufRead *.hs set sw=2
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.ls set filetype=ls
+au FileType c,cpp,java,perl set cin sw=4
 au FileType perl set isident-=$
+au FileType cabal,haskell set sw=2
+au FileType javascript,coffee set nocin ai sw=4
 
 if version >= 700
   map g1 :tabn 1<CR>

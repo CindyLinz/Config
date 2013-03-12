@@ -15,7 +15,7 @@ set ruler
 set wildmenu
 set modeline
 set et
-set mouse=a
+"set mouse=a
 filetype plugin on
 syn on
 

@@ -25,10 +25,14 @@ hi Normal ctermbg=0
 au BufNewFile,BufRead *.coffee set filetype=coffee
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.ls set filetype=ls
+au BufNewFile,BufRead *.agda set filetype=agda
+au BufNewFile,BufRead *.lagda set filetype=agda
+au BufNewFile,BufRead *.hs set filetype=haskell
 au FileType c,cpp,java,perl set cin sw=4
 au FileType perl set isident-=$
-au FileType cabal,haskell set sw=2
+au FileType cabal,haskell,tex,markdown,agda,sql set sw=2 nocin ai
 au FileType javascript,coffee set nocin ai sw=4
+au BufNewFile,BufRead *.hspl,*.hspm set nocin ai sw=2 fo=ql syn=off
 
 if version >= 700
   map g1 :tabn 1<CR>
@@ -80,3 +84,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "hi IndentGuidesEven guibg=green ctermbg=4
 "snipmate (good!)
 "large file plugin https://github.com/gmunkhbaatarmn/vim-largefile http://www.vim.org/scripts/script.php?script_id=1506
+
+" highlight trailing whitespaces and spaces before a tab
+hi ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/

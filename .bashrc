@@ -117,3 +117,8 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Android PATH
+if [ -e ~/practice/android/android-sdk-linux ]; then
+    export PATH=~/practice/android/android-sdk-linux/platform-tools:~/practice/android/android-sdk-linux/tools:$PATH
+fi

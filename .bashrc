@@ -122,3 +122,6 @@ fi
 if [ -e ~/practice/android/android-sdk-linux ]; then
     export PATH=~/practice/android/android-sdk-linux/platform-tools:~/practice/android/android-sdk-linux/tools:$PATH
 fi
+
+# stolen from c9s
+export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."

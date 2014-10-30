@@ -86,5 +86,5 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "large file plugin https://github.com/gmunkhbaatarmn/vim-largefile http://www.vim.org/scripts/script.php?script_id=1506
 
 " highlight trailing whitespaces and spaces before a tab
-hi ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$\| \+\ze\t/
+au BufNewFile,BufRead * hi ExtraWhitespace ctermbg=red guibg=red
+au BufNewFile,BufRead * match ExtraWhitespace /\s\+$\| \+\ze\t/

@@ -30,8 +30,7 @@ au BufNewFile,BufRead *.lagda set filetype=agda
 au BufNewFile,BufRead *.hs set filetype=haskell
 au FileType c,cpp,java,perl set cin sw=4
 au FileType perl set isident-=$
-au FileType cabal,haskell,tex,markdown,agda,sql set sw=2 nocin ai
-au FileType javascript,coffee set nocin ai sw=4
+au FileType coffee,javascript,cabal,haskell,tex,markdown,agda,sql set sw=2 nocin ai
 au BufNewFile,BufRead *.hspl,*.hspm set nocin ai sw=2 fo=ql syn=off
 
 if version >= 700

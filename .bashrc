@@ -130,3 +130,7 @@ if [ -e ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
     perlbrew use 5.18.2
 fi
+
+if [ -e ~/my_ghc/bin ]; then
+    export PATH=$HOME/my_ghc/bin:$PATH
+fi

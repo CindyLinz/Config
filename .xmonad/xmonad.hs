@@ -19,6 +19,7 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
     [ ((modMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
     , ((controlMask, xK_Print), spawn "sleep 0.2; xwd -root | convert - capture-$$.png")
     , ((0, xK_Print), spawn "xwd | convert - capture-$$.png")
+    , ((modMask, xK_z), spawn "suspend_xwin.pl")
     ]
 
 layout = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full

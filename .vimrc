@@ -1,6 +1,10 @@
 " Author : Cindylinz
 " Date   : 2013.3.3
 
+if !empty(glob($HOME . "/.vim/autoload/pathogen.vim"))
+    execute pathogen#infect()
+endif
+
 set ts=8
 set sw=4
 set backspace=indent,eol,start
@@ -15,7 +19,6 @@ set ruler
 set wildmenu
 set modeline
 set et
-set number
 set relativenumber
 "set mouse=a
 filetype plugin on
@@ -70,10 +73,12 @@ end
 set wildmenu
 set wildmode=longest,list
 
+if !empty(glob($HOME . "/.vim/bundle/nerdtree")) || !empty(glob($HOME . "/.vim/plugin/NERD_tree.vim"))
     "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     "autocmd vimenter * if !argc() | NERDTree | endif
-map gn :NERDTreeToggle \| :silent NERDTreeMirror<CR>
-map <leader>n :NERDTreeFind<CR>
+    map gn :NERDTreeToggle \| :silent NERDTreeMirror<CR>
+    map <leader>n :NERDTreeFind<CR>
+endif
 
 "colorscheme default
 let g:indent_guides_auto_colors = 0 

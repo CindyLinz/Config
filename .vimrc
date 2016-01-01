@@ -19,7 +19,6 @@ set ruler
 set wildmenu
 set modeline
 set et
-set relativenumber
 "set mouse=a
 filetype plugin on
 syn on
@@ -78,6 +77,12 @@ if !empty(glob($HOME . "/.vim/bundle/nerdtree")) || !empty(glob($HOME . "/.vim/p
     "autocmd vimenter * if !argc() | NERDTree | endif
     map gn :NERDTreeToggle \| :silent NERDTreeMirror<CR>
     map <leader>n :NERDTreeFind<CR>
+endif
+
+if !empty(glob($HOME . "/.vim/bundle/vim-easymotion"))
+    map g <Plug>(easymotion-prefix)
+else
+    set relativenumber
 endif
 
 "colorscheme default

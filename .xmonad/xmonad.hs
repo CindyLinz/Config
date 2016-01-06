@@ -7,7 +7,7 @@ import qualified Data.Map as M
 main = xmonad $ defaultConfig
   { borderWidth = 1
   , terminal = "terminator"
-  , modMask = mod3Mask
+  , modMask = mod4Mask
   , keys = newKeys
   , handleEventHook = fullscreenEventHook
   , layoutHook = layout

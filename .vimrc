@@ -80,7 +80,19 @@ if !empty(glob($HOME . "/.vim/bundle/nerdtree")) || !empty(glob($HOME . "/.vim/p
 endif
 
 if !empty(glob($HOME . "/.vim/bundle/vim-easymotion"))
-    map g <Plug>(easymotion-prefix)
+    map gJ <Plug>(easymotion-j)
+    map gK <Plug>(easymotion-k)
+
+    map gs <Plug>(easymotion-s)
+
+    map gw <Plug>(easymotion-w)
+    map gW <Plug>(easymotion-W)
+    map ge <Plug>(easymotion-e)
+    map gE <Plug>(easymotion-E)
+    map gf <Plug>(easymotion-f)
+    map gF <Plug>(easymotion-F)
+    map gb <Plug>(easymotion-b)
+    map gB <Plug>(easymotion-B)
 else
     set relativenumber
 endif

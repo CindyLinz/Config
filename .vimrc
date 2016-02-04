@@ -9,7 +9,7 @@ set ts=8
 set sw=4
 set backspace=indent,eol,start
 set encoding=utf8
-set fileencodings=utf8,big5,big5-hkscs
+set fileencodings=utf8,big5,big5-hkscs,utf-16le
 set ai
 set nocin
 set foldmethod=indent

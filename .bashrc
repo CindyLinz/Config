@@ -132,9 +132,6 @@ if [ -e ~/perl5/perlbrew/etc/bashrc ]; then
     perlbrew use $ver
 fi
 
-if [ -e ~/my_ghc/bin ]; then
-    export PATH=$HOME/my_ghc/bin:$PATH
-fi
 if [ -e ~/.local/bin ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi

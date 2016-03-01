@@ -19,6 +19,7 @@ set ruler
 set wildmenu
 set modeline
 set et
+set cursorline
 "set mouse=a
 filetype plugin on
 syn on

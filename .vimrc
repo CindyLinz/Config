@@ -33,6 +33,7 @@ au BufNewFile,BufRead *.ls set filetype=ls
 au BufNewFile,BufRead *.agda set filetype=agda
 au BufNewFile,BufRead *.lagda set filetype=agda
 au BufNewFile,BufRead *.hs set filetype=haskell
+au BufNewFile,BufRead *.cmm set filetype=c
 au FileType c,cpp,java,perl set cin sw=4
 au FileType perl set isident-=$
 au FileType coffee,ls,javascript,cabal,haskell,tex,markdown,agda,sql,svg set sw=2 nocin ai

@@ -39,6 +39,9 @@ au FileType perl set isident-=$
 au FileType coffee,ls,javascript,cabal,haskell,tex,markdown,agda,sql,svg set sw=2 nocin ai
 au BufNewFile,BufRead *.hspl,*.hspm set nocin ai sw=2 fo=ql syn=off
 
+au FileType haskell set makeprg=stack\ build\ $*
+au FileType haskell set errorformat^=%f:%l:%c:
+
 if version >= 700
   map g1 :tabn 1<CR>
   map g2 :tabn 2<CR>

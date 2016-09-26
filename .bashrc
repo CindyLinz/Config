@@ -134,3 +134,8 @@ fi
 if [ -e ~/.local/bin ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi
+
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff

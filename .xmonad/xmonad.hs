@@ -17,8 +17,8 @@ main = xmonad $ defaultConfig
 newKeys conf@(XConfig {XMonad.modMask = modMask}) =
   M.union (keys defaultConfig conf) $ M.fromList
     [ ((modMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
-    , ((controlMask, xK_Print), spawn "sleep 0.2; xwd -root | convert - capture-$$.png")
-    , ((0, xK_Print), spawn "xwd | convert - capture-$$.png")
+    , ((controlMask, xK_Print), spawn "sleep 0.2; xwd -root | convert xwd:- capture-$$.png")
+    , ((0, xK_Print), spawn "xwd | convert xwd:- capture-$$.png")
     , ((modMask, xK_z), spawn "suspend_xwin.pl")
     , ((0, 0x1008ff03), spawn "/home/cindy/brightness down")
     , ((0, 0x1008ff02), spawn "/home/cindy/brightness up")

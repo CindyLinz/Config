@@ -19,7 +19,6 @@ set ruler
 set wildmenu
 set modeline
 set et
-set cursorline
 "set mouse=a
 filetype plugin on
 syn on
@@ -36,7 +35,7 @@ au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.cmm set filetype=c
 au FileType c,cpp,java,perl set cin sw=4
 au FileType perl set isident-=$
-au FileType coffee,ls,javascript,cabal,haskell,tex,markdown,agda,sql,svg set sw=2 nocin ai
+au FileType coffee,ls,javascript,cabal,haskell,tex,markdown,agda,sql,svg,json,css,html set sw=2 nocin ai
 au BufNewFile,BufRead *.hspl,*.hspm set nocin ai sw=2 fo=ql syn=off
 
 au FileType haskell setlocal makeprg=stack\ build\ $*
@@ -112,5 +111,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "large file plugin https://github.com/gmunkhbaatarmn/vim-largefile http://www.vim.org/scripts/script.php?script_id=1506
 
 " highlight trailing whitespaces and spaces before a tab
-hi ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$\| \+\ze\t/
+autocmd BufNewFile,BufRead,VimEnter,Colorscheme * :hi ExtraWhitespace ctermbg=red guibg=red
+autocmd BufNewFile,BufRead,VimEnter,Colorscheme * :match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+if !empty(glob($HOME . "/bin/grep.pl"))
+    set grepprg=grep.pl\ $*
+endif

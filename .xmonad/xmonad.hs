@@ -1,10 +1,11 @@
 import XMonad
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
+import XMonad.Actions.CopyWindow
 --import XMonad.Util.EZConfig (additionlKeys)
 import qualified Data.Map as M
 
-main = xmonad $ defaultConfig
+main = xmonad $ def
   { borderWidth = 1
   , terminal = "terminator"
   , modMask = mod4Mask
@@ -15,7 +16,7 @@ main = xmonad $ defaultConfig
   }
 
 newKeys conf@(XConfig {XMonad.modMask = modMask}) =
-  M.union (keys defaultConfig conf) $ M.fromList
+  M.union (keys defaultConfig conf) $ M.fromList $
     [ ((modMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
     , ((controlMask, xK_Print), spawn "sleep 0.2; xwd -root | convert xwd:- capture-$$.png")
     , ((0, xK_Print), spawn "xwd | convert xwd:- capture-$$.png")
@@ -24,7 +25,9 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
     , ((0, 0x1008ff02), spawn "/home/cindy/brightness up")
     , ((shiftMask, 0x1008ff03), spawn "/home/cindy/brightness down 5")
     , ((shiftMask, 0x1008ff02), spawn "/home/cindy/brightness up 5")
-    ]
+    , ((modMask .|. controlMask, xK_c), kill1)
+    ] ++
+    [((modMask .|. shiftMask .|. controlMask, k), windows $ copy i) | (i, k) <- zip (workspaces conf) [xK_1..]]
 
 layout = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full
   where

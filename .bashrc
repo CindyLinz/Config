@@ -128,7 +128,7 @@ export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 
 if [ -e ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
-    perlbrew use $(perlbrew list | tac - | head -n1 | sed 's/*//')
+    #perlbrew use $(perlbrew list | tac - | head -n1 | sed 's/*//')
 fi
 
 if [ -e ~/.local/bin ]; then

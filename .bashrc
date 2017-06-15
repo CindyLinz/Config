@@ -86,6 +86,12 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias :q='exit'
+alias :q!='exit'
+alias :wq='exit'
+alias :wq!='exit'
+alias :wqa='exit'
+
 if [ -x /usr/bin/most ]; then
     export PAGER=/usr/bin/most
 fi

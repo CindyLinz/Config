@@ -91,6 +91,8 @@ alias :q!='exit'
 alias :wq='exit'
 alias :wq!='exit'
 alias :wqa='exit'
+alias :qa='exit'
+alias :qa!='exit'
 
 if [ -x /usr/bin/most ]; then
     export PAGER=/usr/bin/most

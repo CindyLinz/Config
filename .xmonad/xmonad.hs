@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.StackSet (greedyView)
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Actions.CopyWindow
@@ -27,7 +28,7 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
     , ((shiftMask, 0x1008ff02), spawn "/home/cindy/brightness up 5")
     , ((modMask .|. controlMask, xK_c), kill1)
     ] ++
-    [((modMask .|. controlMask, k), windows $ copy i) | (i, k) <- zip (workspaces conf) [xK_1..]]
+    [((modMask .|. controlMask, k), windows $ greedyView i . copy i) | (i, k) <- zip (workspaces conf) [xK_1..]]
 
 layout = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full
   where

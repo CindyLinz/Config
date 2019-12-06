@@ -143,6 +143,10 @@ if [ -e ~/.local/bin ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi
 
+if [ -e /usr/bin/meh ]; then
+    complete -f -X '!*.@(jpg|jpeg|png|bmp|gif)' meh
+fi
+
 stty stop ''
 stty start ''
 stty -ixon

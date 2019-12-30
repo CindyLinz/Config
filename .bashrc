@@ -144,7 +144,7 @@ if [ -e ~/.local/bin ]; then
 fi
 
 if [ -e /usr/bin/meh ]; then
-    complete -f -X '!*.@(jpg|jpeg|png|bmp|gif)' meh
+    complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif)' meh
 fi
 
 stty stop ''

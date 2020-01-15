@@ -14,7 +14,13 @@ main = xmonad $ def
   , handleEventHook = fullscreenEventHook
   , layoutHook = layout
   , startupHook = spawn "terminator"
+  , manageHook = hooks
   }
+
+hooks = composeAll
+  [ className =? "MPlayer" --> doFloat
+  , className =? "vlc" --> doFloat
+  ]
 
 newKeys conf@(XConfig {XMonad.modMask = modMask}) =
   M.union (keys defaultConfig conf) $ M.fromList $

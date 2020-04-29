@@ -146,6 +146,12 @@ fi
 if [ -e /usr/bin/meh ]; then
     complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif)' meh
 fi
+if [ -e /usr/bin/dhcpcd ]; then
+    function list_ip_link(){ # $2
+        IFS=' ' read -r -a COMPREPLY <<< $(/usr/bin/perl /home/cindy/list_ip_link.pl $2)
+    }
+    complete -F list_ip_link dhcpcd
+fi
 
 stty stop ''
 stty start ''

@@ -146,9 +146,20 @@ fi
 if [ -e /usr/bin/meh ]; then
     complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif)' meh
 fi
-if [ -e /usr/bin/dhcpcd ]; then
+if [[ -e /usr/bin/dhcpcd && -e /usr/bin/ip ]]; then
     function list_ip_link(){ # $2
-        IFS=' ' read -r -a COMPREPLY <<< $(/usr/bin/perl /home/cindy/list_ip_link.pl $2)
+        COMPREPLY=()
+        IFS=$'\n'
+        for line in $(/usr/bin/ip link); do
+            pat='^[0-9]+: ([^:]+):'
+            if [[ $line =~ $pat ]]; then
+                dev=${BASH_REMATCH[1]}
+                pat="^$2"
+                if [[ $dev =~ $pat ]]; then
+                    COMPREPLY+=($dev)
+                fi
+            fi
+        done
     }
     complete -F list_ip_link dhcpcd
 fi

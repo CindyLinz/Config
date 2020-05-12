@@ -35,6 +35,9 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
     , ((0, 0x1008ff02), spawn "/home/cindy/brightness up")
     , ((shiftMask, 0x1008ff03), spawn "/home/cindy/brightness down 5")
     , ((shiftMask, 0x1008ff02), spawn "/home/cindy/brightness up 5")
+    , ((0, 0x1008ff12), spawn "/home/cindy/volume.pl toggle")
+    , ((0, 0x1008ff11), spawn "/home/cindy/volume.pl down")
+    , ((0, 0x1008ff13), spawn "/home/cindy/volume.pl up")
     , ((modMask .|. controlMask, xK_c), kill1)
     ] ++
     [((modMask .|. controlMask, k), windows $ greedyView i . copy i) | (i, k) <- zip (workspaces conf) [xK_1..]]

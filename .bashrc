@@ -36,6 +36,8 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
+    screen) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -43,7 +45,7 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
+if [[ -z "$color_prompt" && -n "$force_color_prompt" ]]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
@@ -102,7 +104,9 @@ if [ -x /usr/bin/vim ]; then
     export EDITOR=/usr/bin/vim
 fi
 
-if [ -x /usr/bin/chromium ]; then
+if [ -x /usr/bin/firefox ]; then
+    export BROWSER=/usr/bin/firefox
+elif [ -x /usr/bin/chromium ]; then
     export BROWSER=/usr/bin/chromium
 fi
 
@@ -144,7 +148,7 @@ if [ -e ~/.local/bin ]; then
 fi
 
 if [ -e /usr/bin/meh ]; then
-    complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif)' meh
+    complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif|JPG|JPEG|PNG|BMP|GIF)' meh
 fi
 if [[ -e /usr/bin/dhcpcd && -e /usr/bin/ip ]]; then
     function list_ip_link(){ # $2

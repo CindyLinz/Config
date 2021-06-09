@@ -33,21 +33,12 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
     , ((modMask .|. shiftMask, xK_g), spawn "google-chrome-stable")
     , ((modMask .|. shiftMask, xK_f), spawn "firefox -P default")
     , ((modMask .|. shiftMask, xK_b), spawn "terminator -e 'bc -l'")
-    , ((modMask, xK_c), do
-        let
-          tmpDir = "/home/cindy/Downloads"
-          handleIgnored = handle (\(_ :: SomeException) -> return ())
-        liftIO $ do
-          handleIgnored $ removeFile $ tmpDir <> "/a.txt"
-          handleIgnored $ removeFile $ tmpDir <> "/b.txt"
-        spawn $ "terminator -e 'vim " <> tmpDir <> "/a.txt; mv " <> tmpDir <> "/a.txt " <> tmpDir <> "/b.txt'"
-        liftIO $ do
-          mgr <- FSN.startManager
-          FSN.watchDir mgr tmpDir ((== (tmpDir <> "/b.txt")) . FSN.eventPath) $ const $ do
-            spawn $ "xclip -r -se c -i " <> tmpDir <> "/b.txt"
-            FSN.stopManager mgr
-          return ()
+    , ((modMask .|. shiftMask, xK_s), do
+        spawn "/usr/bin/telegram-desktop"
+        spawn "/usr/bin/slack"
+        spawn "/usr/bin/google-chrome-stable"
       )
+    , ((modMask, xK_c), spawn "perl clipboard.pl /home/cindy/Downloads/a.txt")
     , ((controlMask, xK_Print), spawn "sleep 0.2; xwd -root | convert xwd:- capture-$$.png")
     , ((0, xK_Print), spawn "xwd | convert xwd:- capture-$$.png")
     , ((modMask, xK_z), spawn "suspend_xwin.pl")

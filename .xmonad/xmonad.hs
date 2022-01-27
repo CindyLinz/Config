@@ -38,7 +38,7 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
         spawn "/usr/bin/slack"
         spawn "/usr/bin/google-chrome-stable"
       )
-    , ((modMask, xK_c), spawn "perl clipboard.pl /home/cindy/Downloads/a.txt")
+    , ((modMask, xK_c), spawn "perl clipboard.pl")
     , ((controlMask, xK_Print), spawn "sleep 0.2; xwd -root | convert xwd:- capture-$$.png")
     , ((0, xK_Print), spawn "xwd | convert xwd:- capture-$$.png")
     , ((modMask, xK_z), spawn "suspend_xwin.pl")

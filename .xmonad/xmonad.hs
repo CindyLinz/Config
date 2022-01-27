@@ -11,7 +11,7 @@ import System.Directory
 import Control.Concurrent
 import Control.Exception
 
-main = xmonad $ def
+main = xmonad $ ewmh $ def
   { borderWidth = 1
   , terminal = "terminator"
   , modMask = mod4Mask

@@ -148,7 +148,7 @@ if [ -e ~/.local/bin ]; then
 fi
 
 if [ -e /usr/bin/meh ]; then
-    complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif|JPG|JPEG|PNG|BMP|GIF)' meh
+    complete -o plusdirs -f -X '!*.@(jpg|jpeg|png|bmp|gif|webp|pdf|JPG|JPEG|PNG|BMP|GIF|WEBP|PDF)' meh
 fi
 if [[ -e /usr/bin/dhcpcd && -e /usr/bin/ip ]]; then
     function list_ip_link(){ # $2

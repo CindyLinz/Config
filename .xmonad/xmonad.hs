@@ -50,8 +50,9 @@ newKeys conf@(XConfig {XMonad.modMask = modMask}) =
     , ((0, 0x1008ff11), spawn "/home/cindy/volume.pl down")
     , ((0, 0x1008ff13), spawn "/home/cindy/volume.pl up")
     , ((modMask .|. controlMask, xK_c), kill1)
-    ] ++
-    [((modMask .|. controlMask, k), windows $ greedyView i . copy i) | (i, k) <- zip (workspaces conf) [xK_1..]]
+    , ((modMask .|. controlMask, xK_0), windows copyToAll)
+    ]
+    ++ [((modMask .|. controlMask, k), windows $ greedyView i . copy i) | (i, k) <- zip (workspaces conf) [xK_1..]]
 
 layout = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full
   where

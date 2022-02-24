@@ -8,7 +8,18 @@
 export LC_ALL=en_US.UTF-8
 export LANGUAGE=en_US:en
 
-export PATH=~/bin:~/.cabal/bin:$PATH
+if [ -e /lib/emscripten ]; then
+    export PATH=/lib/emscripten:$PATH
+fi
+if [ -e /opt/emscripten-llvm/bin ]; then
+    export PATH=/opt/emscripten-llvm/bin:$PATH
+fi
+if [ -e ~/.cabal/bin ]; then
+    export PATH=~/.cabal/bin:$PATH
+fi
+if [ -e ~/bin ]; then
+    export PATH=~/bin:$PATH
+fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace

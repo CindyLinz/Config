@@ -4399,6 +4399,7 @@ crl 辄
 crlv 虮
 crn 轢
 crn 轹
+crnb 蟎
 crnq 蠓
 crod 螬
 crok 蟶

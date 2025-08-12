@@ -35,7 +35,7 @@ au BufNewFile,BufRead *.hs set filetype=haskell
 au BufNewFile,BufRead *.cmm set filetype=c
 au FileType c,cpp,java,perl set cin sw=4
 au FileType perl set isident-=$
-au FileType coffee,ls,javascript,cabal,haskell,tex,markdown,agda,sql,svg,json,css,html set sw=2 nocin ai
+au FileType coffee,ls,javascript,cabal,haskell,tex,markdown,agda,sql,svg,json,css,html,php set sw=2 nocin ai
 au BufNewFile,BufRead *.hspl,*.hspm set nocin ai sw=2 fo=ql syn=off
 
 au FileType haskell setlocal makeprg=stack\ build\ $*

@@ -17,6 +17,9 @@ fi
 if [ -e ~/.cabal/bin ]; then
     export PATH=~/.cabal/bin:$PATH
 fi
+if [ -e ~/.local/bin ]; then
+    export PATH=~/.local/bin:$PATH
+fi
 if [ -e ~/bin ]; then
     export PATH=~/bin:$PATH
 fi
